@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function ChangeBackground()
+{
+	if(document.body.style.backgroundColor=='blue'){
+        document.body.style.backgroundColor='yellow';
+		}else{
+    document.body.style.backgroundColor="blue";
+			}
+}
+function ChangeText() {
+	document.getElementById("p1").innerHTML="新安人才网"
+	
+}
+</script>
+</head>
+<body>
+	<div id="div1">
+		<p id="p1">新安人才网</p>
+		<p id="p2">五八同城</p>
+	</div>
+	<script>
+document.getElementById("p1").innerHTML="新文本!";
+</script>
+	<p>段落通过脚本来修改内容。</p>
+	<script>
+  document.getElementById("p1").style.color="blue";
+  document.getElementById("p1").style.fontFamily="Arial";
+  document.getElementById("p1").style.fontSize="larger";
+  document.getElementById("p2").style.fontSize="larger";
+  document.getElementById("p2").style.color="red";
+	</script>
+	<script>
+	var para=document.createElement("p");
+	var node=document.createTextNode("这是一个新段落。");
+	para.appendChild(node);
+	var element=document.getElementById("div1");
+	element.appendChild(para);
+	</script>
+	<input type="button" onclick="document.body.style.background='blue';"
+		value="修改背景颜色" />
+	<input type="button" onclick="document.body.style.background='yellow';"
+		value="其它背景颜色" />
+	<input type="button" onclick="ChangeBackground()" value="还原背景颜色" />
+	<input type="button" onclick="ChangeText()" value="修改文本" />
+	<script>
+	var parent=document.getElementById("div1");
+	var child=document.getElementById("p2");
+	parent.removeChild(child);
+	</script>
+</body>
+</html>

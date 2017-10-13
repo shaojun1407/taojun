@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../JQuery/jquery-3.2.1.min.js"></script>
+
+
+<body>
+	<div id="from">div的内容</div>
+	<div id="to"></div>
+	<script type="text/javascript">
+$("#to").html($("#from").html());
+</script>
+	<ul>
+		<li class="fruit">Apple</li>
+		<li id="tomato">Tomato</li>
+		<li class="fruit">Banana</li>
+		<li>Potato</li>
+		<li class="fruit">Orange</li>
+	</ul>
+	<script type="text/javascript">
+$('.fruit.#tomato').css('color','red');
+</script>
+
+	<hr />
+	<div>
+		祖先元素
+		<p>
+			<label>孙元素</label> <span><label>后代元素</label></span>
+		</p>
+		<label>子元素</label>
+	</div>
+
+	<script type="text/javascript">
+    $('div label').css('color', 'red');
+    $('p+label').css('color','blue');
+</script>
+	<br />
+	<ul>
+		<li>Apple</li>
+		<li>Tomato</li>
+		<li>Banana</li>
+		<li>Potato</li>
+		<li>Orange</li>
+	</ul>
+
+	<script type="text/javascript">
+$('li:first').css('color','red');
+$('li:last').css('color','blue');
+$('li:eq(2)').css('color', 'yellow');
+$('li:contains(to)').css('color', 'blue');
+</script>
+	<li>Apple
+		<p>
+			<span></span>
+		</p>
+	</li>
+	<p style="dispaly: none;">我是隐藏的</p>
+	<p style="dispaly: none;">我是隐藏的1</p>
+	<p style="dispaly: none;">我是隐藏的2</p>
+	<script type="text/javascript">
+$('p:hidden').show();//显示
+//$('p:visible').hide();//隐藏
+</script>
+	<hr />
+	<input id="ipt" type="text" class="cls_ipt" />
+	<script type="text/javascript">
+$('input[id=ipt]').val('hellow');
+</script>
+
+
+	<form id="my_form">
+		<input type="text" /> <input type="radio" /> <input type="radio"
+			checked="checked" /> <input type="checkbox" /> <input
+			type="checkbox" checked="checked" />
+	</form>
+	<script type="text/javascript">
+console.log($('#my_form:input:checked'));
+</script>
+	<select id="sel" multiple="multiple"
+		style="width: 100px; hidden: 100px;">
+		<option value="0">苹果</option>
+		<option value="1" selected="selected">桔子</option>
+		<option value="2">荔枝</option>
+		<option value="3" selected="selected">葡萄</option>
+		<option value="4">香蕉</option>
+	</select>
+	<script type="text/javascript">
+console.log($('#sel:selected'));
+</script>
+	<br />
+	<form id="my_form" action="foo.php"></form>
+
+	<script type="text/javascript">
+console.log($('#my_form').attr('action'));
+$('#my_form').attr('action', 'bar.html');
+console.log($('#my_form').attr('action'));
+</script>
+	<hr />
+
+
+
+	<script type="text/javascript">
+function showAndHide(){
+var display=$('#01')[0].style.display;
+if(display||display=="none"){
+	$('#01').show(3000,function(){
+$('#btn01').val("隐藏Div");
+		});
+}else{
+$('#01').hide(2000,function(){
+$('#btn01').val("显示Div");
+});
+}
+}
+</script>
+	<div id="01"
+		style="width: 150px; height: 150px; background-color: lightblue;">这是一个div元素</div>
+	<script type="text/javascript">
+</script>
+	<input id="01" type="button" value="隐藏Div" onclick="showAndHide()" />
+	<hr/>
+	<div id="11"style="width:24px;height:32px;border:1px solid red;"></div>
+<button id="btn05" type="button">变大</button>
+
+<script type="text/javascript">
+$('#btn05').bind('click', function(){
+    $('#11').animate({
+        width: '240px',
+        height: '320px'
+    }, 3000,function(){
+        $('#11').animate({
+            width: '24px',
+            height: '32px'
+        });
+    });
+});
+</script>
+</body>
+</html>

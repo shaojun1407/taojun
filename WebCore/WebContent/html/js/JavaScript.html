@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../js/JavaScriptDemo.js"></script>
+<script type="text/javascript">
+	/* 定义一个函数 */
+	function age() { //使用function 定义一个函数，方法
+		document.write("I am 20!");
+	}
+
+	//定义一个方法
+	function DialogBox() {
+		//alert("Welcome!");	//这是一个警告框，窗口中只有一个确认按钮
+		//var result = confirm("Can you speak english?");	//这是一个确认按钮，有两个按钮可以选择
+		//通过var 关键字可以用来声明变量,几乎所有的变量类型的声明都是使用var
+		//result = confirm("Can you speak english?");	//这是一个确认按钮，有两个按钮可以选择
+		//没有var 来声明变量，这个result也可以用!
+		//console.info(result);//使用console.info(),向浏览器的控制台输出信息！
+
+		//提示用户输入对话框
+		var ret = prompt("How old are you?", 23); //有两个按钮，一个单行文本框！
+		console.info("ret: " + ret);
+
+	}
+
+	function WinClose() {
+		window.close(); //关闭当前窗口！
+	}
+
+	function ForIn() {
+		// 创建具有某些属性的对象
+		var myObject = new Object();
+		myObject.name = "James";
+		myObject.age = "22";
+		myObject.phone = "555 1234";
+		// 枚举（循环）对象的所有属性
+		for (prop in myObject) { // 显示 "The property 'name' is James"，等等。
+			window.alert("The property '" + prop + "' is " + myObject[prop]);
+		}
+	}
+
+	function funcArgs(exp1, exp2, exp3, exp4) {
+		var num = funcArgs.arguments.length;
+		var args = funcArgs.arguments;
+		switch (num) {
+		case 1:
+			document.write(exp1 + "<br/>");
+			break;
+		case 2:
+			document.write(exp1 + "--" + exp2 + "<br/>");
+			break;
+		case 3:
+			document.write(exp1 + "--" + exp2 + "--" + exp3 + "<br/>");
+			break;
+		case 4:
+			document.write(exp1 + "--" + exp2 + "--" + exp3 + "--" + exp4
+					+ "<br/>");
+			break;
+		default:
+			document.write("参数数量不匹配！");
+			for ( var arg in args) {
+				//document.writeln(args[arg]);
+				document.write(args[arg] + "<br/>"); //使用标签来换行！
+			}
+			break;
+		}
+	}
+
+	//定义Student的构造函数
+	function Student(name) {
+		this.name = name; //定义一个name属性
+		this.getName = getName; //定义一个getName的方法
+		this.toString = toString; //定义一个toString的方法
+	}
+	function getName() {
+		return this.name;
+	}
+	function toString() {
+		return "Student : " + this.name;
+	}
+	//Student 构造函数演示
+	function Button1_onclick() {
+		var s = new Student("lijie", 20, "asdad", "13971212");
+		console.debug(s.toString());
+		alert(s.getName());
+		alert(s.name);
+	}
+
+	//Pasta构造函数演示
+	function Btn_Pasta() {
+		var pasta = new Pasta("玉米", 200, "圆形");
+		alert(pasta.toString());
+		// 都没有添加到 pasta 对象的三个新属性。添加的是expando属性，仅仅是当前实例有！
+		pasta.color = "pale straw";
+		pasta.drycook = 7;
+		//添加原型属性，所有的实例都会有这个属性
+		Pasta.prototype.foodgroup = "carbohydrates";
+		pasta.freshcook = 0.5;
+		var chowFun = new Pasta("rice", 3, "flat", false);
+		// chowFun 对象或其他现有的 pasta 对象
+		alert(chowFun.toString());
+
+	}
+</script>
+
+</head>
+<!-- <body onload="age()"> -->
+<body>
+	<!-- onload 是载入事件，事件处理程序是age()方法 -->
+
+	<input type="button" onclick="DialogBox()" value="系统窗口演示">
+
+	<a href="javascript:self.close()">关闭窗口</a>
+	<br />
+	<input type="button" onclick="WinClose()" value="关闭窗口" />
+
+	<input type="button" onclick="ForIn()" value="For In Demo" />
+	<hr />
+	<input type="button" onclick="funcArgs()" value="函数参数数量演示0" />
+	<input type="button" onclick="funcArgs(12)" value="函数参数数量演示1" />
+	<input type="button" onclick="funcArgs(12,25)" value="函数参数数量演示2" />
+	<input type="button" onclick="funcArgs(12,25,30)" value="函数参数数量演示3" />
+	<input type="button" onclick="funcArgs(12,25,30,40)" value="函数参数数量演示4" />
+	<input type="button" onclick="funcArgs(12,25,30,40,50)"
+		value="函数参数数量演示5" />
+
+	<hr />
+	<input type="button" onclick="Button1_onclick()"
+		value="Student 自定义构造函数演示">
+	<input type="button" onclick="Btn_Pasta()" value="Pasta 自定义构造函数演示">
+
+</body>
+</html>

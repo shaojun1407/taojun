@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<frameset bordercolor="green" border="100" rows="20%,*" scrolling="no" frameborder="0" >
+	<frame src="./subframe/top.html" name="topFrame" noresize="noresize" />
+	<frameset cols="25%,*">
+		<frame src="subframe/middle.html" name="leftFrame" />
+		<frame src="subframe/bottom.html" name="rightFrame" />
+	</frameset>
+</frameset>
+<noframes>
+	<body>如浏览器不支持框架，才显示body内的内容
+	</body>
+</noframes>
+</html>

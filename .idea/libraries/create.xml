@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="create">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SZM/bin/com/tsj/create.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

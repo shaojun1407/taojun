@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<bgsound src="audio/adou.mp3" loop="infinite">
+	<a name="top">网页头部</a>
+
+	<!-- a 标签，超链接 -->
+	<a href="http://www.baidu.com">百度 </a>
+	<!-- 连接到网外一个网址 -->
+	<br />
+	<a href="MarkupDemo.html" target="_blank">另一个页面</a>
+	<hr />
+	<br />
+	<a href="#top">回到头部</a>
+
+	<a href="MarkupDemo.html#foot">另一个页面的底部</a>
+	<a href="MarkupDemo.html#head">另一个页面的头部</a>
+	<a href="mailto:1797890817@qq.com">站长邮箱(1797890817@qq.com)</a>
+	<hr />
+	<!-- html 特殊符号 -->
+	<span>密 码：</span>
+	<br />
+	<span>密&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+	<span><6></span>
+	<span>&lt;6&gt;</span>
+	<span>&quot;您好！&quot;</span>
+	<span>版权&copy;</span>
+	<hr />
+	<form action="../index.html" method="get">
+		<!-- input 标签，表单输入组件 -->
+		<!-- <input name="username" type="text" size="10" maxlength="10"  /> -->
+		<input name="username" type="text" size="10" max="15" min="4" 
+			readonly="readonly" value="这个值是不可以修改的！" />
+		<!-- size 控制的是组件的长度，maxlength控制的是能输入的字符数 -->
+		<br /> <input id="passwd" name="passwd" type="password"> <span>性别：</span>
+		<input name="sex" type="radio" checked="checked"> <span>男</span>
+		<input name="sex" type="radio"> <span>女</span> <br /> <span>爱好：</span>
+		<input name="hobby" type="checkbox" /> <span>篮球</span> <input
+			name="hobby" type="checkbox" checked="checked" /> <span>足球</span> <input
+			name="hobby" type="checkbox" /> <span>台球</span> <input name="hobby"
+			type="checkbox" /> <span>羽毛球</span> <br /> <input name="fileurl"
+			type="text"> <input name="file" type="file"> <input
+			type="image" src="../imgs/image.png"> <br /> <input
+			type="submit" value="OK" disabled="disabled"> <input
+			type="reset" value="Cancel">
+		<hr />
+		<span>请选择您所在的省份：</span> <select name="select" size="6">
+			<option>江苏</option>
+			<option selected="selected">安徽</option>
+			<option>河北</option>
+			<option>湖南</option>
+		</select> <br />
+		<textarea name="textarea" rows="4" cols="60" readonly="readonly">
+		
+		依法治军、从严治军，是历史规律的昭示。
+
+　　无制之军，不堪一击。古今中外军队，都把严明法纪作为治军通则。加强纪律性，革命无不胜。一支军队的力量，不仅要看其人数，不仅要看其武器装备，还要看其纪律性。我军一贯重视法纪建设，从“三大纪律八项注意”到“五统四性”，从把正规化纳入军队建设的总目标到坚持依法治军与从严治军相统一……人民军队从胜利走向胜利的一次次伟大实践证明：尊崇法治、严明纪律是一个重要的制胜法宝。
+
+　　依法治军、从严治军，是使命任务的呼唤。
+
+　　当前，人民军队走到新的历史关头，面临着机械化、信息化建设双重跨越的挑战。构建适应打赢信息化战争、有效履行使命任务的联合作战指挥体系，无论是装备技术升级、人的理念素质转型，还是军队组织形态、管理模式重塑，都需要以法治和改革双轮驱动。
+
+　　依法治军、从严治军，是破解问题的需要。
+		
+		</textarea>
+
+		<input name="userId" type="hidden" value="ST000001"> <input
+			name="time" type="date"> <input type="time"> <input
+			type="color">
+	</form>
+
+	<table cellspacing="0" width="200" border="1">
+		<tr>
+			<td colspan="3">学生成绩</td>
+			<!-- 跨3列 -->
+		</tr>
+		<tr>
+			<td rowspan="2">张三</td>
+			<!-- 跨2行 -->
+			<td>语文</td>
+			<td>98</td>
+		</tr>
+		<tr>
+			<td>数学</td>
+			<td>96</td>
+		</tr>
+		<tr>
+			<td rowspan="2">李四</td>
+			<!-- 跨2行 -->
+			<td>语文</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<td>数学</td>
+			<td>86</td>
+		</tr>
+	</table>
+	<!-- 高级表格应用 -->
+	<table align="center" width="200" border="1">
+		<caption>年终数据报表</caption>
+		<thead style="background-color:green; ">
+			<tr>
+				<th>月份</th>
+				<th>收入(RMB)</th>
+			</tr>
+		</thead>
+		<tbody style="background-color:lime;">
+			<tr>
+				<td>1月</td>
+				<td>5600</td>
+			</tr>
+			<tr>
+				<td>2月</td>
+				<td>6600</td>
+			</tr>
+			<tr>
+				<td>3月</td>
+				<td>7600</td>
+			</tr>
+			<tr>
+				<td>4月</td>
+				<td>8600</td>
+			</tr>
+			<tr>
+				<td>5月</td>
+				<td>9600</td>
+			</tr>
+			<tr>
+				<td>6月</td>
+				<td>5600</td>
+			</tr>
+		</tbody>
+		<tfoot align="center" style="background-color:yellow;">
+			<tr>
+				<td>月平均收入：</td>
+				<td>8000</td>
+			</tr>
+			<tr>
+				<td>总计：</td>
+				<td>15000</td>
+			</tr>
+		</tfoot>
+	</table>
+<form>
+		<textarea></textarea>
+	</form>
+<form>
+		<input type="submit">
+	</form>
+
+</body>
+</html>
