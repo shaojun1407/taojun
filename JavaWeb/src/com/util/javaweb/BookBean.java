@@ -1,4 +1,4 @@
-package coom.util.javaweb;
+package com.util.javaweb;
 
 public class BookBean {
 	// 创建自定义的构造函数
