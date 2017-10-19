@@ -8,7 +8,7 @@
 <title>通用标签使用示例</title>
 </head>
 <body>
-	<jsp:useBean id="book" class="coom.util.javaweb.BookBean" />
+	<jsp:useBean id="book" class="com.util.javaweb.BookBean" />
 	<c:catch var="error">
 		<c:set var="count" value="${param.c+1}" scope="page" />
         删除之前，变量count的值为：<c:out value="${count}" />

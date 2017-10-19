@@ -9,4 +9,25 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>InitParameter</servlet-name>
+    <servlet-class>com.util.javaweb.InitParameter</servlet-class>
+    <init-param>
+      <param-name>institute</param-name>
+      <param-value>职业培训学院</param-value>
+    </init-param>
+    <init-param>
+      <param-name>major</param-name>
+      <param-value>Java技术</param-value>
+    </init-param>
+    <init-param>
+      <param-name>count</param-name>
+      <param-value>10000</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InitParameter</servlet-name>
+    <url-pattern>/initparam</url-pattern>
+  </servlet-mapping>
 </web-app>
