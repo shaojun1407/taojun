@@ -9,15 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class InitParameter extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
 	private String myInstitute = null;
 	private String myMajor = null;
 	private int count = 0;
 
-	
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("InitParamter init 开始执行...");
 		super.init(config);
@@ -27,8 +25,13 @@ public class InitParameter extends HttpServlet {
 			myInstitute = "";
 		myMajor = config.getInitParameter("major");
 		if (myMajor == null)
-			;
+			
 		myMajor = "";
+		/*
+		 * myMajor=config.getInitParameter("major"); if (myMajor.equals(null)) {
+		 * myMajor=""; }
+		 */
+
 		String strCount = config.getInitParameter("count");
 		try {
 			count = Integer.parseInt(strCount);
@@ -43,6 +46,7 @@ public class InitParameter extends HttpServlet {
 	 *      response)
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		response.setContentType("text/html;charset=GBK");// 设置文档类型级字符集
 		PrintWriter out = response.getWriter();// 得到输出字符输出流
 		out.println("<HTML>");

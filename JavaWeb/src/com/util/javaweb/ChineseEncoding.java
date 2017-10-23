@@ -2,8 +2,9 @@ package com.util.javaweb;
 
 import java.io.*;
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-
+@WebServlet("/servlet/ChineseEncoding")
 public class ChineseEncoding extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -17,8 +18,10 @@ public class ChineseEncoding extends HttpServlet {
 		out.print("<font size=4>用户输入信息：</font>");
 
 		String info = request.getParameter("information");
-		String newinfo = new String(info.getBytes("iso8859_1"), "UTF-8");
-		out.println("<H3>" + newinfo + "</H3>");
+//		String newinfo = new String(info);
+//		String newinfo = new String(info.getBytes("iso8859_1"), "UTF-8"); 自己增加的编码
+//		out.println("<H3>" + newinfo + "</H3>"); 不需要响应注释
+		out.println("<H3>" + info + "</H3>");
 		out.println("</BODY>");
 		out.println("</HTML>");
 		out.close();// 关闭输出流
