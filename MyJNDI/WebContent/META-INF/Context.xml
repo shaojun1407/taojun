@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/MyJNDI" docBase="D:\GitHub\JavaEE_Projs\MyJNDI" privileged="true" reloadable="true">
+<Host name="localhost" appBase="webapps"
+unpackWARs="true" autoDeploy="true">
+
+<Value className="org.apache.catalina.values.AccessLogValue" directory="logs"
+prefix="localhost_access_log" suffix=".txt"
+pattern="%h %1 %u %t &quot;%r&quot;%s %b"/>
+
+
+
+<Context path="/MyJNDI" docBase="D:\peixun\ruanjian\apache-tomcat-8.5.20\webapps\MyJNDI" privileged="true" reloadable="true">
 <Resource name="jdbc/jndi" auth="Contatiner"
 type="javax.sql.DataSource"
 driverClassName="com.mysql.jdbc.Driver"
@@ -8,3 +17,4 @@ username="root" password="root" maxActive="8"
 maxIdle="2" maxWait="10000"
 />
 </Context>
+</Host>
