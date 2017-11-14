@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Webdemo">
+    <wb-module deploy-name="Webdemoj">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Webdemo"/>
-        <property name="java-output-path" value="/Webdemo/build/classes"/>
+        <property name="java-output-path" value="/Webdemoj/build/classes"/>
+        <property name="context-root" value="Webdemoj"/>
     </wb-module>
 </project-modules>
