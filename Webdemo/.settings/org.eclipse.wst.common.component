@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
     <wb-module deploy-name="Webdemoj">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <property name="java-output-path" value="/Webdemoj/build/classes"/>
         <property name="context-root" value="Webdemoj"/>
+=======
+    <wb-module deploy-name="webdemos">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="java-output-path" value="/webdemos/build/classes"/>
+        <property name="context-root" value="webdemos"/>
+>>>>>>> 75788e2fb3c2611d5151abf8bef2d8a347fd5660
     </wb-module>
 </project-modules>
