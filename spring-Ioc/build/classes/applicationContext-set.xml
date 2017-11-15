@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		">
+		<!-- BoyConstructor.java -->
+	<bean id="chinaGirlFriend" class="com.shao.Ioc.set.ChinaGirlFriend">
+	<property name="lanuage" value="chinese" />
+	</bean>
+	<bean id="boyConstructor" class="com.shao.Ioc.set.BoyConstructor">
+	<!-- 通过构造方法入对象 -->
+	<constructor-arg ref="chinaGirlFriend" />
+	</bean>
+	<!-- BoySetter.java -->
+	<bean id="japanGirlFriend" class="com.shao.Ioc.set.japanGirlFriend" >
+	<property name="language" value="japanese" />
+	</bean>
+	<bean id="boySetter" class="com.shao.Ioc.set.BoySetter">
+	<!-- 通过Setter方法注入对象 -->
+	<property name="girlFriend" ref="japanGirlFriend" />
+	</bean> 
+	<!-- BoyPNameSpace.java -->
+	<bean id="usaGirFriend" class="com.shao.Ioc.set.UsaGirFriend" P:language="english"/>
+	<!-- 使用p命名空间注入属性值 -->
+	<bean id="boyPNameSpace" class="com.shao.Ioc.set.BoyPNameSpace"
+	p:girlFriend-ref="usaGirlFriend" />
+</beans>
