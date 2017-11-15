@@ -21,7 +21,7 @@
 	<property name="girlFriend" ref="japanGirlFriend" />
 	</bean> 
 	<!-- BoyPNameSpace.java -->
-	<bean id="usaGirFriend" class="com.shao.Ioc.set.UsaGirFriend" P:language="english"/>
+	<bean id="usaGirFriend" class="com.shao.Ioc.set.UsaGirFriend" p:language="english"/>
 	<!-- 使用p命名空间注入属性值 -->
 	<bean id="boyPNameSpace" class="com.shao.Ioc.set.BoyPNameSpace"
 	p:girlFriend-ref="usaGirlFriend" />
