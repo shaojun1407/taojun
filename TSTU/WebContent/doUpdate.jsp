@@ -24,7 +24,8 @@
     obj.setUser_sex(user_sex);  
     obj.setUser_cell(user_cell.toString());  
     UserinfoDao dao=new UserinfoDao();  
-    dao.update(obj);  
+   /*  dao.update(obj);  */
+   dao.update(obj);
     response.sendRedirect("index.jsp");  
       
 %>  

@@ -30,8 +30,9 @@
                 </td>  
             </tr>  
 	           <tr>
-	           <td colspan="6"><h1 align="center">    用户列表</h1></td>  </tr>
+	           <td colspan="8"><h1 align="center">    用户列表</h1></td>  </tr>
             <tr>  
+                <th>批量操作</th>  
                 <th>ID</th>  
                 <th>姓名</th>  
                 <th>年龄</th>  
@@ -45,13 +46,14 @@
               %>  
                 <!--Html代码-->  
                 <tr>  
+                	<td><input type="checkbox" name="duoxuan" id="<%=obj.getId()%>"></td>
                     <td><%=obj.getId()%></td>  
                     <td><%=obj.getUser_name()%></td>  
                     <td><%=obj.getUser_age()%></td>  
                     <td><%=obj.getUser_sex()%></td>  
                     <td><%=obj.getUser_cell()%></td>  
                     <td>  
-                        <%-- <a href="doRemove.jsp?id=<%=obj.getId()%>">删除</a> --%>、  
+                        <%-- <a href="doRemove.jsp?id=<%=obj.getId()%>">删除</a> --%>  
                         <a href="update.jsp?id=<%=obj.getId()%>">更新</a>   
                         <input type="button" value="删除"
 					onclick="myAction('<%=obj.getId()%>')" />  

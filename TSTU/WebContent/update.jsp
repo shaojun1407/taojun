@@ -1,18 +1,20 @@
 <%@ page import="java.util.*,dao.*,entity.*" pageEncoding="UTF-8"%>  
+<%!int id; %>
+
 <%  
     request.setCharacterEncoding("UTF-8");  
-    int id=Integer.parseInt(request.getParameter("id"));  
+    id=Integer.parseInt(request.getParameter("id"));  
     UserinfoDao dao=new UserinfoDao();  
     UserInfo obj=dao.findById(id);  
       
     //准备好常量  
-    ArrayList sexs=new ArrayList();  
+  ArrayList sexs=new ArrayList();  
     sexs.add("男");  
     sexs.add("女");  
-    ArrayList cell=new ArrayList();  
+   /* ArrayList cell=new ArrayList();  
     cell.add("123");  
     cell.add("456");  
-    cell.add("789");  
+    cell.add("789");   */
      
  %>  
 <html>  
@@ -52,7 +54,7 @@
   </script>  
   <body>  
     <h1 align="center">更新用户的信息</h1>  
-    <form action="doUpdate.jsp" method="post" >  
+    <form action="./doUpdate.jsp" method="post" >  
         <input type="hidden" name="id" value="<%=obj.getId()%>">  
         <table align="center" width="50%">  
             <!-- 姓名 -->  
@@ -88,19 +90,17 @@
             <!-- 手机号 -->  
             <tr>  
                 <td align="right">更新后的手机号:</td>  
-                <td align="left">  
-                <%for(int i=0;i<cell.size();i++){%>  
-                    <input  type="text" name="cell_hobby" value="<%=cell.get(i).toString()%>"<%if(obj.getUser_cell().indexOf(cell.get(i).toString())!=-1){%>checked="checked"<%}%>/><%=cell.get(i).toString()%><% } %>  
-             </td>   
                 <td>  
+                	<input type="text"/>
                     <div id="cell_msg"></div>  
                 </td>  
             </tr>  
             <!-- 按钮 -->  
             <tr>  
                 <td align="center" colspan="3">  
-                    <input type="button" value="提交" onclick="mySubmit()">  
-                          
+                    <!-- <input type="button" value="提交" onclick="mySubmit()">  --> 
+
+<input type="submit" value="tihsia"/>                          
                     <input type="button" value="重置"  onclick="myReset()">  
                 </td>  
             </tr>  
