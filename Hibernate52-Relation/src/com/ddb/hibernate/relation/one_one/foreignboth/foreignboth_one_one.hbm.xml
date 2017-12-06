@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ddb.hibernate.relation.one_one.foreignboth">
+<!-- 双向的1对1  -->
+	<class name="Person" table="Person">
+		<id name="personId" column="personId" type="long">
+			<generator class="native" />
+		</id>
+		<property name="personName" column="personName" type="string" />
+		<many-to-one name="address" class="Address" column="addressId" unique="true" cascade="all" />
+	</class>
+
+	<class name="Address" table="Address">
+		<id name="addressId" column="addressId" type="long">
+			<generator class="native" />
+		</id>
+		<property name="addressName" column="addressName" type="string" />
+		<one-to-one name="person" class="Person" property-ref="address"   />
+	</class>
+
+</hibernate-mapping>

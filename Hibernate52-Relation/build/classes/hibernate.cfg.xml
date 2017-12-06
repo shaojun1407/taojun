@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://192.168.43.20:3306/hibernate</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="connection.password">root</property>
+        <property name="connection.pool_size">1</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <!--  <property name="format_sql">true</property>  -->
+        <!-- 
+        	hbm2ddl.auto
+        	create  每次运行创建表
+        	update  数据库存在表，不创建
+         -->
+        <property name="hbm2ddl.auto">update</property>
+        
+     <!--    <mapping resource="com/ddb/hibernate/relation/one_one/primarysingle/primarysingle_one_one.hbm.xml"/>
+        
+        <mapping resource="com/ddb/hibernate/relation/one_one/primaryboth/primaryboth_one_one.hbm.xml"/>
+        
+        <mapping resource="com/ddb/hibernate/relation/one_one/foreignsingle/foreignsingle_one_one.hbm.xml"/>
+       
+        <mapping resource="com/ddb/hibernate/relation/one_one/foreignboth/foreignboth_one_one.hbm.xml"/>
+        
+        <mapping resource="com/ddb/hibernate/relation/many_one/singleonemany/single_one_many.hbm.xml"/>
+        
+        <mapping resource="com/ddb/hibernate/relation/many_one/singlemanyone/single_many_one.hbm.xml"/>
+         
+        <mapping resource="com/ddb/hibernate/relation/many_one/both/both_many_one.hbm.xml"/>
+       
+        <mapping resource="com/ddb/hibernate/relation/many_many/single/single_many_many.hbm.xml"/>
+        
+        <mapping resource="com/ddb/hibernate/relation/many_many/both/both_many_many.hbm.xml"/> 
+                
+          -->
+        <mapping resource="com/ddb/hibernate/relation/inverse/many_one/inverse_many_one.hbm.xml"/>
+       
+       <!--  <mapping resource="com/ddb/hibernate/relation/inverse/many_many/inverse_many_many.hbm.xml"/> -->
+       
+       <!--  <mapping resource="com/ddb/hibernate/relation/cascade/cascade_many_one.hbm.xml"/> -->
+       <!-- <mapping resource="com/ddb/hibernate/inherit/unionsubclass/unionsubclass.hbm.xml"/> -->
+       <!--  <mapping resource="com/ddb/hibernate/inherit/subclass/subclass.hbm.xml"/> -->
+       <!--  <mapping resource="com/ddb/hibernate/inherit/joinsubclass/joinsubclass.hbm.xml"/> -->
+
+    </session-factory>
+</hibernate-configuration>

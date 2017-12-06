@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ddb.hibernate.inherit.unionsubclass">
+
+	<class name="Person" table="Person">
+		<id name="personId" column="personId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="personName" column="personName" type="string" />
+		<union-subclass name="Employee" table="Employee">
+			<property name="job" column="job" type="string" />
+		</union-subclass>
+		<union-subclass name="Customer" table="Customer">
+			<property name="comment" column="comment" type="string" />
+		</union-subclass>
+	</class>
+
+</hibernate-mapping>

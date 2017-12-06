@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ddb.hibernate.inherit.subclass">
+
+	<class name="Person" table="Person">
+		<id name="personId" column="personId" type="long">
+			<generator class="increment" />
+		</id>
+		<discriminator column="personType" type="string" />
+		<property name="personName" column="personName" type="string" />
+		<subclass name="Employee" discriminator-value="emp">
+			<property name="job" column="job" type="string" />
+		</subclass>
+		<subclass name="Customer" discriminator-value="cus">
+			<property name="comment" column="comment" type="string" />
+		</subclass>
+	</class>
+
+</hibernate-mapping>

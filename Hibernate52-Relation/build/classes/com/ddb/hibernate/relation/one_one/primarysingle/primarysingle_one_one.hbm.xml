@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ddb.hibernate.relation.one_one.primarysingle">
+<!-- 单向的1对1 -->
+	<class name="Person" table="Person">
+		<!-- personId 是 Person表主键，address的外键 -->
+		<id name="personId" column="personId" type="long">
+			<generator class="foreign" >
+            	<param name="property">address</param>
+            </generator>
+		</id>
+		<property name="personName" column="personName" type="string" />
+		<!-- Person  to address  -->
+		<one-to-one name="address" class="Address" constrained="true" />
+	</class>
+
+	<class name="Address" table="Address">
+		<id name="addressId" column="addressId" type="long">
+			<generator class="native" />
+		</id>
+		<property name="addressName" column="addressName" type="string" />
+	</class>
+
+</hibernate-mapping>

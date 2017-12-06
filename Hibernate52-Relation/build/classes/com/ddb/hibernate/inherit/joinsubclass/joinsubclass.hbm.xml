@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ddb.hibernate.inherit.joinsubclass">
+
+	<class name="Person" table="Person">
+		<id name="personId" column="personId" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="personName" column="personName" type="string" />
+		
+		<joined-subclass name="Employee" table="Employee">
+			<key column="emppersonId" />
+			<property name="job" column="job" type="string" />
+		</joined-subclass>
+		
+		<joined-subclass name="Customer" table="Customer">
+			<key column="cuspersonId" />
+			<property name="comment" column="comment" type="string" />
+		</joined-subclass>
+		
+	</class>
+
+</hibernate-mapping>

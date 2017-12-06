@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+    PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ddb.hibernate.relation.inverse.many_one">
+
+	<class name="Person" table="Person">
+		<id name="personId" column="personId" type="long">
+			<generator class="native" />
+		</id>
+		<property name="personName" column="personName" type="string" />
+		<!-- 不管什么情况下many-to-one配置的属性都可以维护关联关系
+			 因为该元素配置的属性对应着数据表中就外键 -->
+		<many-to-one name="address" class="Address" column="addressId" />
+	</class>
+
+	<class name="Address" table="Address">
+		<id name="addressId" column="addressId" type="long">
+			<generator class="native" />
+		</id>
+		<property name="addressName" column="addressName" type="string" />
+		<!-- 在Set中使用inverse属性设置Set配置的属性是否可以维护关联关系
+			 inverse="true":表示该集合不能够维护关联关系
+			 inverse="false":表示该集合能够维护关联关系
+			 默认情况下：inverse="false" -->
+		<set  name="persons" inverse="false">
+        	<key column="addressId" />
+        	<one-to-many class="Person" />
+        </set>
+	</class>
+
+</hibernate-mapping>
